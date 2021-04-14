@@ -12,10 +12,14 @@ class MainActivity : AppCompatActivity() {
 
         AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
 
-        initWebView()
+        initWebView("file:///android_res/raw/hello.html")
+
+        button.setOnClickListener {
+            initWebView("https://zs.labs.defdev.eu/eula.html")
+        }
     }
 
-    private fun initWebView(){
-        web_view.loadUrl("https://index.hu")
+    private fun initWebView(url: String){
+        web_view.loadUrl(url)
     }
 }
